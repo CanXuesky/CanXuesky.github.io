@@ -481,3 +481,40 @@ body { background: #fff; color: #1d2430; }
   .timeline-item, .publication { grid-template-columns: 1fr; gap: 9px; }
   .timeline-item time, .publication-badge { padding-top: 0; }
 }
+/* Layered blue-only palette */
+:root {
+  --navy: #17375e;
+  --ocean: #285b91;
+  --azure: #3f79b8;
+  --sky: #6c9dcc;
+  --mist: #dceaf7;
+  --ice: #f1f7fc;
+}
+.wordmark span { background: linear-gradient(145deg, var(--navy), var(--azure)); }
+.wordmark strong, .hero h1 { color: var(--navy); }
+.hero-role { color: var(--azure); }
+.hero-lead strong { color: var(--ocean); }
+.desktop-nav a:hover, .contact-link:hover { color: var(--azure); }
+.hero-contacts svg { background: var(--ocean); }
+
+.focus-chips span:nth-child(1) { border-color: #9fc5e8; background: #e8f2fb; color: #245b8f; }
+.focus-chips span:nth-child(2) { border-color: #86b4dd; background: #dcecf9; color: #174f83; }
+.focus-chips span:nth-child(3) { border-color: #b2cee6; background: #f0f6fb; color: #3e6d99; }
+
+#news .section-index { color: #4f82bd; }
+#education .section-index { color: #2f6da7; }
+#publications .section-index { color: #628fb8; }
+#honors .section-index { color: #255580; }
+.section-heading h2 { color: var(--navy); }
+.news-item time { color: #4b82bc; }
+.timeline-item time { color: #2e6fae; }
+.publication-badge span { color: #5f8eb8; }
+.publication-badge strong { color: #245b8f; }
+.honor-item time { color: #285b91; }
+.timeline-item .institution, .authors { color: var(--ocean); }
+.publication-note { background: linear-gradient(90deg, #e4f0fa, #d8e8f6); color: var(--navy); }
+.publication-links a { border-color: var(--azure); color: var(--azure); }
+.language-switch { border-color: #cadceb; background: var(--ice); }
+.language-switch button { color: #526d89; }
+.language-switch button.active { background: linear-gradient(120deg, var(--ocean), #5f91c6); box-shadow: 0 4px 12px rgba(40,91,145,.22); }
+::selection { background: var(--azure); }
