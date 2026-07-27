@@ -366,3 +366,89 @@ footer a { color: var(--blue); font-size: 14px; font-weight: 700; }
   .profile-contact-grid a + a { border-top: 1px solid var(--line); border-left: 0; }
   .simple-footer { align-items: flex-start; flex-direction: column; gap: 4px; }
 }
+/* Minimal academic layout inspired by the supplied reference */
+body { background: #fff; color: #1d2430; }
+.site-shell { width: min(100% - 48px, 1120px); }
+.site-header { min-height: 72px; background: rgba(255,255,255,.96); border-bottom-color: #e5e9f0; backdrop-filter: blur(10px); }
+.wordmark span { background: #4675bd; }
+.desktop-nav { color: #5d6878; }
+
+.hero {
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 42px;
+  min-height: 0;
+  align-items: center;
+  padding: 64px 0 74px;
+}
+.hero .portrait-wrap {
+  width: 240px;
+  min-height: 330px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #eef2f7;
+  box-shadow: none;
+}
+.hero .portrait-wrap::after { display: none; }
+.hero .portrait-wrap img { width: 100%; height: 330px; object-fit: cover; object-position: center 20%; }
+.hero h1 {
+  max-width: none;
+  margin: 0 0 6px;
+  color: #4675bd;
+  font-family: var(--serif);
+  font-size: clamp(38px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1.2;
+}
+.hero-role { margin: 0 0 20px; color: #4675bd; font-family: var(--serif); font-size: 21px; font-weight: 700; }
+.hero-lead { margin: 0 0 19px; color: #24272d; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+.hero-lead strong { color: #4675bd; }
+.hero-copy h2 { margin: 0 0 10px; font-family: var(--serif); font-size: 21px; line-height: 1.4; }
+.focus-chips { gap: 9px; margin: 0; }
+.focus-chips span,
+.focus-chips span:nth-child(1),
+.focus-chips span:nth-child(2),
+.focus-chips span:nth-child(3) {
+  padding: 6px 15px;
+  border: 1px solid #9bc9f4;
+  border-radius: 999px;
+  background: #e9f5ff;
+  color: #1768ba;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hero-contacts { gap: 12px; margin-top: 15px; }
+.hero-contacts a { min-width: 0; gap: 8px; padding: 3px 6px 3px 0; color: #39485d; }
+.hero-contacts a:hover { color: #4675bd; transform: none; }
+.hero-contacts svg { width: 27px; height: 27px; padding: 4px; border-radius: 50%; background: #4675bd; fill: none; stroke: #fff; stroke-width: 1.8; }
+.hero-contacts a:nth-child(2) svg { fill: #1f2937; stroke: none; background: transparent; padding: 1px; }
+.hero-contacts a span { font-size: 13px; font-weight: 600; }
+
+.section { padding: 68px 0; border-top-color: #e5e9f0; }
+.section-heading { margin-bottom: 26px; }
+.section-index { min-height: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: #6f8fbe; font-size: 11px; }
+.section-heading h2 { margin: 5px 0 0; color: #26364d; font-size: clamp(28px, 3vw, 36px); }
+.news-list { gap: 0; padding-left: 0; border-top: 1px solid #cfd7e2; }
+.news-list::before, .news-item::before { display: none; }
+.news-item { grid-template-columns: 145px 1fr; gap: 26px; padding: 21px 4px; border: 0; border-bottom: 1px solid #e5e9f0; border-radius: 0; background: transparent; box-shadow: none; }
+.news-item time { min-height: 0; justify-content: flex-start; padding: 0; border-radius: 0; background: transparent; color: #4675bd; font-family: ui-monospace, Consolas, monospace; font-size: 15px; box-shadow: none; }
+.news-item p { font-size: 17px; font-weight: 500; }
+.timeline, .publication-list, .honor-list { border-top: 1px solid #cfd7e2; }
+.timeline-item, .publication { padding: 30px 4px; border: 0; border-bottom: 1px solid #e5e9f0; border-radius: 0; background: transparent; box-shadow: none; }
+.honor-list { padding: 8px 0; }
+.honor-item { padding: 10px 4px; border-radius: 0; }
+.honor-item:hover { background: #f7f9fc; transform: none; }
+.publication-note { background: #edf4fc; }
+.simple-footer { border-top-color: #e5e9f0; }
+
+@media (max-width: 760px) {
+  .site-shell { width: min(100% - 32px, 680px); }
+  .hero { grid-template-columns: 1fr; gap: 28px; padding: 42px 0 58px; }
+  .hero .portrait-wrap { width: min(100%, 280px); min-height: 350px; }
+  .hero .portrait-wrap img { height: 350px; }
+  .hero h1 { font-size: 38px; }
+  .hero-role { font-size: 18px; }
+  .news-item { grid-template-columns: 1fr; gap: 6px; }
+}
