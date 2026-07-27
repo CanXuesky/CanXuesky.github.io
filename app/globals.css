@@ -452,3 +452,32 @@ body { background: #fff; color: #1d2430; }
   .hero-role { font-size: 18px; }
   .news-item { grid-template-columns: 1fr; gap: 6px; }
 }
+/* Typography, date alignment, and bilingual controls */
+.section-index { font-size: 14px; font-weight: 800; letter-spacing: .12em; }
+.news-item time,
+.timeline-item time,
+.publication-badge span,
+.honor-item time { font-size: 16px; line-height: 1.6; }
+.timeline-item,
+.publication { grid-template-columns: 180px minmax(0, 1fr); align-items: start; gap: 34px; }
+.timeline-item time,
+.publication-badge { padding-top: 3px; }
+.publication-badge strong { max-width: 175px; font-size: 14px; line-height: 1.55; }
+.hero-lead { max-width: 720px; font-size: 19px; }
+
+.header-actions { display: flex; justify-self: end; gap: 18px; align-items: center; }
+.language-switch { display: inline-flex; gap: 3px; padding: 3px; border: 1px solid #dbe2eb; border-radius: 999px; background: #f7f9fc; }
+.language-switch button { min-width: 58px; padding: 6px 10px; border: 0; border-radius: 999px; background: transparent; color: #667184; font-family: var(--sans); font-size: 12px; font-weight: 700; cursor: pointer; transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease; }
+.language-switch button.active { background: #4675bd; color: #fff; box-shadow: 0 3px 10px rgba(70,117,189,.2); }
+.language-switch button:focus-visible { outline: 2px solid #4675bd; outline-offset: 2px; }
+
+@media (max-width: 900px) {
+  .site-header { grid-template-columns: 1fr auto; }
+  .header-actions { gap: 10px; }
+}
+@media (max-width: 620px) {
+  .contact-link { display: none; }
+  .language-switch button { min-width: 52px; padding-inline: 8px; }
+  .timeline-item, .publication { grid-template-columns: 1fr; gap: 9px; }
+  .timeline-item time, .publication-badge { padding-top: 0; }
+}
