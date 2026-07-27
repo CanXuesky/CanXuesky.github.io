@@ -96,22 +96,22 @@ export default function Home() {
         </section>
 
         <section className="section" id="news">
-          <div className="section-heading"><p className="section-index">01 / {language === "zh" ? "动态" : "News"}</p><h2>{t.sections[0]}</h2></div>
+          <div className="section-heading"><p className="section-index">01</p><h2>{t.sections[0]}</h2></div>
           <div className="news-list">{news.map((item, index) => <article className="news-item reveal-card" key={item.date + index}><time>{item.date}</time><p>{localized(item)}</p></article>)}</div>
         </section>
 
         <section className="section" id="education">
-          <div className="section-heading"><p className="section-index">02 / {language === "zh" ? "教育" : "Education"}</p><h2>{t.sections[1]}</h2></div>
+          <div className="section-heading"><p className="section-index">02</p><h2>{t.sections[1]}</h2></div>
           <div className="timeline"><article className="timeline-item reveal-card"><time>{t.present}</time><div><h3>{t.degree}</h3><p className="institution">{t.school}</p></div></article></div>
         </section>
 
         <section className="section" id="publications">
-          <div className="section-heading"><p className="section-index">03 / {language === "zh" ? "论文" : "Publications"}</p><h2>{t.sections[2]}</h2></div>
+          <div className="section-heading"><p className="section-index">03</p><h2>{t.sections[2]}</h2></div>
           <div className="publication-list">{publications.map((publication) => <article className="publication reveal-card" key={publication.title}><div className="publication-badge"><span>{publication.year}</span><strong>{publication.venue}</strong></div><div className="publication-content"><h3>{publication.title}</h3><p className="authors">{publication.authors} ({publication.year})</p><p className="citation">{publication.citation}</p><p className="publication-note">{language === "zh" ? publication.noteZh : publication.noteEn}</p><div className="publication-links"><a href={publication.doi} target="_blank" rel="noreferrer">DOI / Paper</a></div></div></article>)}</div>
         </section>
 
         <section className="section" id="honors">
-          <div className="section-heading"><p className="section-index">04 / {language === "zh" ? "荣誉" : "Honors"}</p><h2>{t.sections[3]}</h2></div>
+          <div className="section-heading"><p className="section-index">04</p><h2>{t.sections[3]}</h2></div>
           <div className="honor-list">{honors.map((honor) => <article className="honor-item reveal-card" key={honor.year + honor.zh}><time>{honor.year}</time><h3>{localized(honor)}</h3></article>)}</div>
         </section>
       </main>

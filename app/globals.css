@@ -518,3 +518,45 @@ body { background: #fff; color: #1d2430; }
 .language-switch button { color: #526d89; }
 .language-switch button.active { background: linear-gradient(120deg, var(--ocean), #5f91c6); box-shadow: 0 4px 12px rgba(40,91,145,.22); }
 ::selection { background: var(--azure); }
+/* Bright, consistent academic blue palette */
+:root {
+  --navy: #184f91;
+  --ocean: #276fc2;
+  --azure: #4389df;
+  --sky: #7eb5eb;
+  --mist: #ddecfb;
+  --ice: #f4f9ff;
+}
+.wordmark span { background: #327bd1; }
+.wordmark strong, .hero h1 { color: #2468b8; }
+.hero-role { color: #4b8bd4; }
+.hero-lead strong { color: #2e74c3; }
+.section-heading h2 { color: #245f9f; }
+.section-index,
+#news .section-index,
+#education .section-index,
+#publications .section-index,
+#honors .section-index { color: #4f91df; font-size: 15px; }
+
+.focus-chips span,
+.focus-chips span:nth-child(1),
+.focus-chips span:nth-child(2),
+.focus-chips span:nth-child(3) {
+  border-color: #91c1ee;
+  background: #e8f4ff;
+  color: #216cb7;
+}
+
+.news-item time,
+.timeline-item time,
+.publication-badge span,
+.honor-item time { color: #4389d5; }
+.publication-badge strong,
+.timeline-item .institution,
+.authors { color: #2d73bd; }
+.publication-note { background: #e7f3ff; color: #2867a8; }
+.publication-links a { border-color: #3e86d6; color: #3e86d6; }
+.hero-contacts svg { background: #3d82d3; }
+.language-switch { border-color: #bcd8f1; background: #f1f7fd; }
+.language-switch button.active { background: #3f86d8; box-shadow: 0 4px 13px rgba(63,134,216,.23); }
+.section, .news-item, .timeline-item, .publication { border-color: #d8e7f5; }
