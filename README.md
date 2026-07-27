@@ -1,3 +1,23 @@
+# CanXuesky.github.io
+
+薛灿的中英双语个人学术主页，使用 Vinext 构建并静态导出到 GitHub Pages。
+
+## 本地开发与验证
+
+要求 Node.js `>=22.13.0`。
+
+```bash
+npm ci
+npm run dev
+npm test
+```
+
+`npm run build` 会把可直接托管的静态文件生成到 `dist/client/`。
+
+推送到 `main` 后，`.github/workflows/deploy-pages.yml` 会自动构建并发布该目录。首次使用时，请在仓库的 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
+
+---
+
 # vinext-starter
 
 A clean full-stack starter running on

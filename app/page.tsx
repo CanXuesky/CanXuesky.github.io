@@ -90,7 +90,7 @@ export default function Home() {
             <div className="focus-chips" aria-label={t.interests}>{t.chips.map((chip) => <span key={chip}>{chip}</span>)}</div>
             <div className="hero-contacts" aria-label={language === "zh" ? "联系方式" : "Contact details"}>
               <a href="mailto:2380863003@qq.com" aria-label="Email"><MailIcon /><span>2380863003@qq.com</span></a>
-              <a href="https://github.com/shuixin1221" target="_blank" rel="noreferrer" aria-label="GitHub"><GithubIcon /><span>shuixin1221</span></a>
+              <a href="https://github.com/CanXuesky" target="_blank" rel="noreferrer" aria-label="GitHub"><GithubIcon /><span>CanXuesky</span></a>
             </div>
           </div>
         </section>
