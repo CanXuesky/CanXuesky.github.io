@@ -5,10 +5,10 @@ import { useState } from "react";
 type Language = "zh" | "en";
 
 const competitionAwards = [
-  { date: "2026", zh: "第十五届全国海洋航行器设计与制作大赛A1 新概念创意设计一等奖", en: "First Prize, A1 New Concept Creative Design, 15th National Marine Vehicle Design and Manufacturing Competition" },
-  { date: "2026", zh: "第十五届全国海洋航行器设计与制作大赛A1 新概念创意设计二等奖", en: "Second Prize, A1 New Concept Creative Design, 15th National Marine Vehicle Design and Manufacturing Competition" },
-  { date: "2026", zh: "第十五届全国海洋航行器设计与制作大赛B 设计与制作（B2 水下组）二等奖", en: "Second Prize, B Design and Manufacturing (B2 Underwater Group), 15th National Marine Vehicle Design and Manufacturing Competition" },
-  { date: "2026", zh: "第十九届全国大学生节能减排大赛主赛道一等奖", en: "First Prize, Main Track, 19th National College Student Energy Conservation and Emission Reduction Competition" },
+  { date: "2026.08", zh: "第十五届全国海洋航行器设计与制作大赛A1 新概念创意设计一等奖", en: "First Prize, A1 New Concept Creative Design, 15th National Marine Vehicle Design and Manufacturing Competition" },
+  { date: "2026.08", zh: "第十五届全国海洋航行器设计与制作大赛A1 新概念创意设计二等奖", en: "Second Prize, A1 New Concept Creative Design, 15th National Marine Vehicle Design and Manufacturing Competition" },
+  { date: "2026.08", zh: "第十五届全国海洋航行器设计与制作大赛B 设计与制作（B2 水下组）二等奖", en: "Second Prize, B Design and Manufacturing (B2 Underwater Group), 15th National Marine Vehicle Design and Manufacturing Competition" },
+  { date: "2026.08", zh: "第十九届全国大学生节能减排大赛主赛道一等奖", en: "First Prize, Main Track, 19th National College Student Energy Conservation and Emission Reduction Competition" },
 ];
 
 const news = [
