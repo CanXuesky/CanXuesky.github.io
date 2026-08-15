@@ -4,7 +4,15 @@ import { useState } from "react";
 
 type Language = "zh" | "en";
 
+const competitionAwards = [
+  { date: "2026", zh: "第十五届全国海洋航行器设计与制作大赛A1 新概念创意设计一等奖", en: "First Prize, A1 New Concept Creative Design, 15th National Marine Vehicle Design and Manufacturing Competition" },
+  { date: "2026", zh: "第十五届全国海洋航行器设计与制作大赛A1 新概念创意设计二等奖", en: "Second Prize, A1 New Concept Creative Design, 15th National Marine Vehicle Design and Manufacturing Competition" },
+  { date: "2026", zh: "第十五届全国海洋航行器设计与制作大赛B 设计与制作（B2 水下组）二等奖", en: "Second Prize, B Design and Manufacturing (B2 Underwater Group), 15th National Marine Vehicle Design and Manufacturing Competition" },
+  { date: "2026", zh: "第十九届全国大学生节能减排大赛主赛道一等奖", en: "First Prize, Main Track, 19th National College Student Energy Conservation and Emission Reduction Competition" },
+];
+
 const news = [
+  ...competitionAwards,
   { date: "2026.07", zh: "全国三维数字化创新设计大赛18周年精英联赛（2025–2026）一等奖", en: "First Prize, 18th National 3D Digital Innovation Design Competition Elite League (2025–2026)" },
   { date: "2025", zh: "2025年度优秀共青团员", en: "Outstanding Communist Youth League Member" },
   { date: "2024–2025", zh: "2024–2025学年 一等奖学金", en: "First-class Scholarship, Academic Year 2024–2025" },
@@ -23,6 +31,7 @@ const publications = [{
 }];
 
 const honors = [
+  ...competitionAwards.map(({ date, ...award }) => ({ year: date, ...award })),
   { year: "2026.07", zh: "全国三维数字化创新设计大赛18周年精英联赛（2025–2026）一等奖", en: "First Prize, 18th National 3D Digital Innovation Design Competition Elite League (2025–2026)" },
   { year: "2025", zh: "2025年度优秀共青团员", en: "Outstanding Communist Youth League Member" },
   { year: "2024–2025", zh: "2024–2025学年 一等奖学金", en: "First-class Scholarship, Academic Year 2024–2025" },
