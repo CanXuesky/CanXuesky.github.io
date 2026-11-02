@@ -7,8 +7,4 @@ section: education
 translation: /en/education/
 ---
 
-## 中国海洋大学
-
-**工程学院 · 本科生**
-
-2024.09 — 至今
+{% include education.liquid %}

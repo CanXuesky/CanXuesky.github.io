@@ -2,15 +2,15 @@
 <header id="top">
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" aria-label="{{ t.menu }}">
     <div class="container">
-      <a class="navbar-brand title" href="{{ t.home | relative_url }}">{{ t.name }}</a>
+      <a class="navbar-brand title" href="{{ t.home | relative_url }}"><img src="{{ '/assets/img/favicon.svg' | relative_url }}" alt="" width="28" height="28">{{ t.name }}</a>
       <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{{ t.menu }}">
         <span class="icon-bar top-bar"></span><span class="icon-bar middle-bar"></span><span class="icon-bar bottom-bar"></span>
       </button>
       <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
         <ul class="navbar-nav navbar-menu-list flex-nowrap">
-          {% assign sections = 'about,news,publications,education,honors' | split: ',' %}
+          {% assign sections = 'about,education,publications,honors' | split: ',' %}
           {% for section in sections %}
-            {% if section == 'about' %}{% assign href = t.home %}{% else %}{% assign href = t.prefix | append: '/' | append: section | append: '/' %}{% endif %}
+            {% assign href = t.home | append: '#' | append: section %}
             <li class="nav-item {% if page.section == section %}active{% endif %}"><a class="nav-link" href="{{ href | relative_url }}" {% if page.section == section %}aria-current="page"{% endif %}>{{ t[section] }}</a></li>
           {% endfor %}
           <li class="nav-item language-link"><a class="nav-link" href="{{ page.translation | relative_url }}" lang="{% if page.lang == 'en' %}zh-CN{% else %}en{% endif %}">{% if page.lang == 'en' %}中文{% else %}EN{% endif %}</a></li>

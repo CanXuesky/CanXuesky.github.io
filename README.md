@@ -13,7 +13,7 @@ bundle exec jekyll serve
 
 ## 内容
 
-- `_pages/`：中英简介、动态、教育、论文和荣誉页面。
+- `_pages/`：中英完整主页；简介、教育、论文和全部荣誉集中展示，顶部导航为页内跳转。旧分类页面保留以兼容已有链接。
 - `_data/awards.yml`：原始获奖内容及月份，共用于动态和荣誉列表。
 - `_bibliography/papers.bib`：论文条目。
 - `assets/img/`：个人照片、海蓝色 XC 图标。

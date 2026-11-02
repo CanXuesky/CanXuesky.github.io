@@ -2,55 +2,35 @@
 layout: default
 ---
 {% assign t = site.data.translations[page.lang] %}
-<div class="post" id="about">
-  <header class="post-header">
-    <h1 class="post-title">
-      {{ t.name }}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=t.photo_alt
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+<article class="post academic-home">
+  <section class="home-intro" id="about" aria-labelledby="profile-name">
+    <div class="intro-copy">
+      <p class="intro-affiliation">{{ t.role }}</p>
+      <h1 id="profile-name">{{ t.name }}{% if page.lang != 'en' %}<span class="roman-name">Can Xue</span>{% endif %}</h1>
+      <div class="intro-text">{{ content }}</div>
+    </div>
+    <aside class="portrait-panel" aria-label="{{ t.contact }}">
+      <img src="{{ '/assets/img/profile.jpg' | relative_url | bust_file_cache }}" alt="{{ t.photo_alt }}" width="1280" height="960" fetchpriority="high">
+      <div class="portrait-contacts">
+        <a href="mailto:2380863003@qq.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>2380863003@qq.com</span></a>
+        <a href="https://github.com/CanXuesky" rel="me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.26-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03A9.58 9.58 0 0 1 12 6.82c.85 0 1.71.11 2.51.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.66.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.58 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg><span>GitHub <span class="contact-username">/ CanXuesky</span></span></a>
       </div>
-    {% endif %}
+    </aside>
+  </section>
 
-    <div class="clearfix">{{ content }}</div>
+  <section class="home-section" id="education" aria-labelledby="education-title">
+    <header class="section-heading"><h2 id="education-title">{{ t.education_heading }}</h2></header>
+    <div class="section-content">{% include education.liquid %}</div>
+  </section>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2 id="news">
-        <a href="{{ t.prefix | append: '/news/' | relative_url }}" style="color: inherit">{{ t.news }}</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+  <section class="home-section" id="publications" aria-labelledby="publications-title">
+    <header class="section-heading"><h2 id="publications-title">{{ t.publications_heading }}</h2></header>
+    <div class="section-content publications">{% bibliography --group_by none %}</div>
+  </section>
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2 id="publications">
-        <a href="{{ t.prefix | append: '/publications/' | relative_url }}" style="color: inherit">{{ t.selected }}</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-  </article>
-</div>
+  <section class="home-section" id="honors" aria-labelledby="honors-title">
+    <span id="news" class="section-anchor" aria-hidden="true"></span>
+    <header class="section-heading"><h2 id="honors-title">{{ t.honors_heading }}</h2></header>
+    <div class="section-content">{% include news.liquid %}</div>
+  </section>
+</article>

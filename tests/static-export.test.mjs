@@ -17,6 +17,25 @@ test("exports the original content in both languages with the al-folio runtime",
     assert.match(html, /10\.3389\/feart\.2026\.1769685/);
     assert.match(html, /2380863003/);
     assert.doesNotMatch(html, /you@example\.com|prof_pic\.jpg|Write your biography|Albert Einstein/);
+    assert.doesNotMatch(html, /post-training|intelligent ocean engineering|大模型后训练|海洋工程智能化|third-year|大三/i);
+    for (const section of ["about", "education", "publications", "honors"]) {
+      assert.match(html, new RegExp(`id="${section}"`));
+    }
+    assert.equal((html.match(/<th scope="row">/g) ?? []).length, 8, "homepage includes all honors once");
+    const profile = html.match(/<aside class="portrait-panel"[\s\S]*?<\/aside>/)?.[0];
+    assert.ok(profile, "portrait and contacts share a sidebar");
+    assert.ok(profile.indexOf("<img") < profile.indexOf("mailto:"), "contacts follow the portrait");
+    assert.match(profile, /https:\/\/github\.com\/CanXuesky/);
+    assert.equal((html.match(/href="mailto:/g) ?? []).length, 1);
+  }
+  assert.match(homepage, /薛灿（Can Xue）/);
+  assert.match(homepage, /机械设计制造及其自动化/);
+  assert.match(homepage, /大语言模型（LLMs）、强化学习（RL）、具身智能（Embodied AI）和世界模型（World Models）/);
+  assert.match(english, /Mechanical Design, Manufacturing and Automation/);
+  assert.match(english, /large language models \(LLMs\), reinforcement learning \(RL\), Embodied AI, and World Models/);
+  const nav = homepage.match(/<nav id="navbar"[\s\S]*?<\/nav>/)[0];
+  for (const section of ["about", "education", "publications", "honors"]) {
+    assert.match(nav, new RegExp(`href="/#${section}"`));
   }
   for (const language of ["", "en/"]) {
     for (const section of ["news", "publications", "education", "honors"]) {

@@ -5,32 +5,40 @@ zh-CN:
   about: 简介
   news: 动态
   publications: 论文
+  publications_heading: 论文
   education: 教育
   honors: 荣誉
-  interests: 研究兴趣
   role: 中国海洋大学 · 工程学院
   degree: 本科生
-  selected: 论文
-  all_news: 全部动态
   theme: 切换明暗主题
   menu: 展开导航
-  contact: 联系
+  contact: 联系方式
   photo_alt: 薛灿在山间的个人照片
+  education_heading: 教育经历
+  honors_heading: 荣誉与奖项
+  school: 中国海洋大学
+  college: 工程学院
+  major: 机械设计制造及其自动化
+  study_period: 2024.09 — 至今
 en:
-  name: Xue Can
+  name: Can Xue
   home: /en/
   prefix: /en
   about: about
   news: news
   publications: publications
+  publications_heading: Publications
   education: education
   honors: honors
-  interests: research interests
   role: College of Engineering · Ocean University of China
   degree: Undergraduate Student
-  selected: selected publications
-  all_news: all news
   theme: Change color theme
   menu: Toggle navigation
   contact: contact
-  photo_alt: Portrait of Xue Can in the mountains
+  photo_alt: Portrait of Can Xue in the mountains
+  education_heading: Education
+  honors_heading: Honors & awards
+  school: Ocean University of China
+  college: College of Engineering
+  major: Mechanical Design, Manufacturing and Automation
+  study_period: September 2024 — Present
