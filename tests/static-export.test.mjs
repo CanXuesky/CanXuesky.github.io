@@ -24,7 +24,7 @@ test("exports the original content in both languages with the al-folio runtime",
     for (const section of ["about", "education", "publications", "honors"]) {
       assert.match(html, new RegExp(`id="${section}"`));
     }
-    assert.equal((html.match(/<th scope="row">/g) ?? []).length, 8, "homepage includes all honors once");
+    assert.equal((html.match(/<th scope="row">/g) ?? []).length, 11, "homepage includes all honors once");
     const profile = html.match(/<aside class="portrait-panel"[\s\S]*?<\/aside>/)?.[0];
     assert.ok(profile, "portrait and contacts share a sidebar");
     assert.ok(profile.indexOf("<img") < profile.indexOf("mailto:"), "contacts follow the portrait");
@@ -33,6 +33,12 @@ test("exports the original content in both languages with the al-folio runtime",
   }
   assert.match(homepage, /薛灿（Can Xue）/);
   assert.match(homepage, /机械设计制造及其自动化/);
+  for (const award of ["国家奖学金", "优秀学生", "一等奖学金"]) {
+    assert.ok(homepage.includes(`2025–2026学年 ${award}`));
+  }
+  for (const award of ["National Scholarship", "Outstanding Student", "First-class Scholarship"]) {
+    assert.ok(english.includes(`${award}, Academic Year 2025–2026`));
+  }
   assert.match(homepage, /大语言模型（LLMs）、强化学习（RL）、具身智能（Embodied AI）和世界模型（World Models）/);
   assert.match(english, /Mechanical Design, Manufacturing and Automation/);
   assert.match(english, /large language models \(LLMs\), reinforcement learning \(RL\), Embodied AI, and World Models/);
@@ -45,7 +51,7 @@ test("exports the original content in both languages with the al-folio runtime",
       await access(resolve(output, language, section, "index.html"));
     }
     const honors = await readFile(resolve(output, language, "honors/index.html"), "utf8");
-    assert.equal((honors.match(/<th scope="row">/g) ?? []).length, 8);
+    assert.equal((honors.match(/<th scope="row">/g) ?? []).length, 11);
     assert.match(honors, /2026\.08/);
     assert.match(honors, /2024–2025/);
   }
