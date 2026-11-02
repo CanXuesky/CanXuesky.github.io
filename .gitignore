@@ -43,3 +43,12 @@ next-env.d.ts
 
 # local pnpm cache
 /.pnpm-store/
+
+# Jekyll local build files
+/_site/
+/.bundle/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/
+/vendor/
+/al-folio-upgrade-report.md

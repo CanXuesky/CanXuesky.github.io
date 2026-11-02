@@ -1,0 +1,16 @@
+source 'https://rubygems.org'
+ruby '~> 3.3.0'
+gem 'jekyll', '~> 4.4'
+group :jekyll_plugins do
+  gem 'jekyll-cache-bust'
+  gem 'jekyll-regex-replace'
+  gem 'jekyll-scholar'
+  gem 'jekyll-sitemap'
+  gem 'jemoji'
+  gem 'al_folio_core', '= 1.0.15'
+  gem 'al_folio_upgrade', '= 1.0.3'
+  gem 'al_rtl', '= 1.0.0'
+  gem 'al_citations', '= 1.0.1'
+end
+gem 'observer'
+gem 'webrick'

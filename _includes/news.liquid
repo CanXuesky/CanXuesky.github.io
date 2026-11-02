@@ -1,0 +1,7 @@
+<div class="news"><div class="table-responsive"><table class="table table-sm table-borderless">
+  {% assign limit = site.data.awards.size %}
+  {% if include.limit %}{% assign limit = 5 %}{% endif %}
+  {% for item in site.data.awards limit: limit %}
+    <tr><th scope="row">{{ item.date }}</th><td>{% if page.lang == 'en' %}{{ item.en }}{% else %}{{ item.zh }}{% endif %}</td></tr>
+  {% endfor %}
+</table></div></div>

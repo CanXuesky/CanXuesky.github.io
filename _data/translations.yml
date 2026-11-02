@@ -1,0 +1,36 @@
+zh-CN:
+  name: 薛灿
+  home: /
+  prefix: ''
+  about: 简介
+  news: 动态
+  publications: 论文
+  education: 教育
+  honors: 荣誉
+  interests: 研究兴趣
+  role: 中国海洋大学 · 工程学院
+  degree: 本科生
+  selected: 论文
+  all_news: 全部动态
+  theme: 切换明暗主题
+  menu: 展开导航
+  contact: 联系
+  photo_alt: 薛灿在山间的个人照片
+en:
+  name: Xue Can
+  home: /en/
+  prefix: /en
+  about: about
+  news: news
+  publications: publications
+  education: education
+  honors: honors
+  interests: research interests
+  role: College of Engineering · Ocean University of China
+  degree: Undergraduate Student
+  selected: selected publications
+  all_news: all news
+  theme: Change color theme
+  menu: Toggle navigation
+  contact: contact
+  photo_alt: Portrait of Xue Can in the mountains

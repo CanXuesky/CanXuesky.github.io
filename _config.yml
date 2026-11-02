@@ -1,0 +1,126 @@
+title: 薛灿
+first_name: 薛灿
+middle_name: ''
+last_name: ''
+description: 薛灿，中国海洋大学工程学院本科生。研究兴趣：强化学习、大模型后训练、海洋工程智能化。
+keywords: 薛灿, Xue Can, Ocean University of China, reinforcement learning, ocean engineering
+lang: zh-CN
+icon: favicon.svg
+apple_touch_icon: apple-touch-icon.png
+url: https://canxuesky.github.io
+baseurl: ''
+timezone: Asia/Shanghai
+footer_text: 基于 <a href="https://github.com/alshedivat/al-folio">al-folio</a> · <a href="https://jekyllrb.com/">Jekyll</a>
+theme: al_folio_core
+al_folio:
+  api_version: 1
+  style_engine: tailwind
+  tailwind:
+    version: 4.1.18
+    preflight: false
+    css_entry: assets/tailwind/app.css
+  distill:
+    engine: distillpub-template
+    source: al-org-dev/distill-template#al-folio
+    allow_remote_loader: false
+  features:
+    cv:
+      enabled: false
+    distill:
+      enabled: false
+  compat:
+    bootstrap:
+      enabled: false
+      support_window: v1.0-v1.2
+      deprecates_in: v1.3
+      removed_in: v2.0
+  upgrade:
+    channel: stable
+    auto_apply_safe_fixes: false
+navbar_fixed: true
+footer_fixed: false
+max_width: 930px
+back_to_top: false
+enable_darkmode: true
+enable_navbar_social: false
+enable_progressbar: false
+search_enabled: false
+bib_search: false
+enable_publication_thumbnails: false
+enable_publication_badges:
+  altmetric: false
+  dimensions: false
+  google_scholar: false
+  inspirehep: false
+serve_og_meta: true
+serve_schema_org: false
+og_image: /assets/img/profile.jpg
+markdown: kramdown
+highlighter: rouge
+include:
+- _pages
+- .nojekyll
+exclude:
+- AGENTS.md
+- README.md
+- LICENSE
+- THIRD_PARTY_NOTICES.md
+- Gemfile
+- Gemfile.lock
+- package.json
+- package-lock.json
+- scripts
+- tests
+- node_modules
+- outputs
+- work
+- tmp
+- dist
+- vendor
+- .bundle
+- al-folio-upgrade-report.md
+plugins:
+- jekyll-cache-bust
+- jekyll-regex-replace
+- jekyll/scholar
+- jekyll-sitemap
+- jemoji
+- al_folio_core
+- al_folio_upgrade
+- al_rtl
+- al_citations
+sass:
+  style: compressed
+kramdown:
+  input: GFM
+scholar:
+  last_name:
+  - Xue
+  first_name:
+  - Can
+  - C.
+  style: apa
+  locale: en
+  source: ./_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  bibtex_filters:
+  - latex
+  - smallcaps
+  - superscript
+  replace_strings: true
+  join_strings: true
+  query: '@*'
+  group_by: year
+  group_order: descending
+max_author_limit:
+filtered_bibtex_keywords:
+- selected
+- bibtex_show
+imagemagick:
+  enabled: false
+lazy_loading_images: true
+third_party_libraries:
+  google_fonts:
+    url:
+      fonts: /assets/css/fonts.css
