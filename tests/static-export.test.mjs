@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { access, readFile, readdir } from "node:fs/promises";
 import { resolve, dirname, relative, sep } from "node:path";
 import test from "node:test";
@@ -10,7 +11,9 @@ const english = await readFile(resolve(output, "en/index.html"), "utf8");
 test("exports the original content in both languages with the al-folio runtime", async () => {
   assert.match(homepage, /<html\s+lang="zh-CN"/);
   assert.match(english, /<html\s+lang="en"/);
+  const stylesheetVersion = createHash("md5").update(await readFile("assets/_sass/_site.scss")).digest("hex");
   for (const html of [homepage, english]) {
+    assert.ok(html.includes(`/assets/css/main.css?v=${stylesheetVersion}`), "new local styles invalidate the browser cache");
     assert.match(html, /assets\/css\/tailwind\.css/);
     assert.match(html, /assets\/img\/profile\.jpg/);
     assert.match(html, /assets\/img\/favicon\.svg/);
@@ -64,6 +67,7 @@ test("publishes valid local links and assets without leaking local files", async
     const path = relative(output, file).split(sep).join("/");
     assert.doesNotMatch(path, /^(?:outputs|tmp|work|scripts|tests|node_modules|vendor)\//);
     assert.doesNotMatch(path, /(?:^|\/)(?:Gemfile(?:\.lock)?|_config\.yml|package(?:-lock)?\.json)$/);
+    assert.doesNotMatch(path, /\.scss$/);
     if (!file.endsWith(".html")) continue;
     const html = await readFile(file, "utf8");
     for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {

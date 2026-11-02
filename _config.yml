@@ -91,6 +91,8 @@ plugins:
 - al_citations
 sass:
   style: compressed
+  # Match the directory watched by the theme's stylesheet cache versioning.
+  sass_dir: assets/_sass
 kramdown:
   input: GFM
 scholar:

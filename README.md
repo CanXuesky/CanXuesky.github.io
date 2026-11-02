@@ -17,6 +17,7 @@ bundle exec jekyll serve
 - `_data/awards.yml`：原始获奖内容及月份，共用于动态和荣誉列表。
 - `_bibliography/papers.bib`：论文条目。
 - `assets/img/`：个人照片、海蓝色 XC 图标。
+- `assets/_sass/_site.scss`：站点排版；此目录同时用于样式缓存版本计算。
 - `_config.yml`：站点信息和模板功能。
 
 ## 验证与发布
