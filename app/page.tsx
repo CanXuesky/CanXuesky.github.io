@@ -90,7 +90,7 @@ export default function Home() {
 
       <main>
         <section className="hero" id="about">
-          <div className="portrait-wrap"><img src="/profile.png" alt={language === "zh" ? "薛灿的个人照片" : "Portrait of Xue Can"} /></div>
+          <div className="portrait-wrap"><img src="/profile.jpg" alt={language === "zh" ? "薛灿的个人照片" : "Portrait of Xue Can"} /></div>
           <div className="hero-copy">
             <h1>{t.name}</h1>
             <p className="hero-role">{t.role}</p>

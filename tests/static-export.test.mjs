@@ -11,7 +11,7 @@ test("exports a GitHub Pages-ready static homepage", async () => {
   assert.match(html, /<title>薛灿｜个人学术主页<\/title>/);
   assert.match(html, /https:\/\/github\.com\/CanXuesky/);
   assert.doesNotMatch(html, /shuixin1221/i);
-  assert.match(html, /src="\/profile\.png"/);
+  assert.match(html, /src="\/profile\.jpg"/);
   assert.match(html, /href="\/favicon\.svg"/);
 });
 
@@ -22,7 +22,7 @@ test("includes all files required by GitHub Pages", async () => {
       "404.html",
       "favicon.svg",
       "index.rsc",
-      "profile.png",
+      "profile.jpg",
     ].map((path) => access(new URL(path, outputRoot))),
   );
 });
